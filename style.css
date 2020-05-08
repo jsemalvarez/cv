@@ -1,177 +1,511 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: #333;    
-}
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 *{
-    font-family: tahoma;
-    color: #888;
-    box-sizing: border-box;
-}
-
-.toggle{
-    border:none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin: 30px;
-}
-
-.toggle .bar{
-    width: 27px;
-    margin: 3px;
-    height: 3px;
-    background-color: #888;
-}
-
-nav{
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    transition: all .5s ease-in-out;
-}
-
-nav ul{
-    list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-nav ul li{
-    display: inline-block;
-}
-
-nav ul li:nth-child(1) > button{
-    transition: all .2s cubic-bezier(0.5, 1, 0.5, 1.5) 0.1s;
-}
-
-nav ul li:nth-child(2) > button{
-    transition: all .2s cubic-bezier(0.5, 1, 0.5, 1.5) 0.2s;
-}
-
-nav ul li:nth-child(3) > button{
-    transition: all .2s cubic-bezier(0.5, 1, 0.5, 1.5) 0.3s;
-}
-
-nav ul li:nth-child(4) > button{
-    transition: all .2s cubic-bezier(0.5, 1, 0.5, 1.5) 0.4s;
-}
-
-nav ul button{
-    padding: 10px;
-    font-size: 20px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    background-color: #222;
-    margin: 3px;
-    transform: translateY(-150px);
-    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.5);
-}
-
-nav ul button::after{
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #f44337;
-    transition: all 0.2 ease-in-out;
-}
-
-nav ul button:hover::after{
-    width: 100%;
-    left: 0;
-}
-
-.nav__move{
-    z-index: 10;
-}
-
-.nav__move button{
-    transform: translateY(0px);
+body{      
+    font-family: 'Poppins', sans-serif;
 }
 
 main{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    perspective: 500px;
-    perspective-origin: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(images/fondo2.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: slide 15s infinite; 
 }
 
-.content{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: white;
-    transform-origin: 50% 50%;
-    transition: all 0.8s ease-in-out;
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
-}
-
-.content__move{
-    transform: scale(0.8) translateY(50px) rotateX(10deg);
+@keyframes slide{
+    0%{
+        background-image: url(images/fondo2.jpg);
+    }
+    33%{
+        background-image: url(images/fondo3.jpg);
+    }
+    66%{
+        background-image: url(images/fondo1.jpg);
+    }
 }
 
 section{
-    visibility: hidden;
+    height: 500px;
+    max-width: 1000px;
+    border-radius: 5px;    
+    overflow-y: scroll;
+}
+
+#inicio{ 
+    height: 100%;    
+    background-color: rgba(220, 220, 220, 0.8);    
+    /* background-image: linear-gradient(black, black),url(images/perfil.png); */
+    background-image: url(images/perfil.png);
+    background-repeat: no-repeat;
+    background-position: -10px  120px;
+    color: white;
+}
+
+#inicio h1{
+    padding: 50px 10px;
+    text-align: right;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#inicio p{
+    padding: 10px;
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+
+/*//////////////////////////////////////////////////////
+                E X P E R I E N C I A 
+//////////////////////////////////////////////////////*/
+
+#experiencia{
+    position: relative;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#experiencia .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+#experiencia .card:nth-child(odd){
+    flex-direction: row;
+}
+
+#experiencia .card:nth-child(even){
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+#experiencia .card .imgBx{
+    position: relative;
+    left: 25px;
+    width: 350px;
+    height: 300px;
+    z-index: 1;
+}
+
+#experiencia .card:nth-child(even) .imgBx{
+    left: -25px;
+}
+
+#experiencia .card .imgBx img{
     position: absolute;
-    opacity: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: all 0.3s ease-in-out 0.3s;
+    height: 100%;
+    object-fit: cover;
+}
+
+#experiencia .card .contentBx{
+    position: relative;
+    right: 25px;
+    width: 350px;
+    height: 300px;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 60px 20px 70px;
+}
+
+#experiencia .card:nth-child(even) .contentBx{
+    right: -25px;
+    padding: 20px 70px 20px 60px;
+}
+
+#experiencia .card .contentBx::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: -1;
+}
+
+#experiencia .card .contentBx h2{
+    font-size: 30px;
+    color: #fff;
+}
+
+#experiencia .card .contentBx p{
+    margin-top: 10px;
+    color: #fff;
+}
+
+#experiencia .card .contentBx a{
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #fff;
+}
+
+@media (max-width: 1000px){
+
+    #experiencia .card{
+        flex-direction: column;
+        max-width: 350px;
+        margin: 25px 25px;
+    }
+
+    #experiencia .card .imgBx{
+        width: 100%;
+        height: 250px;
+        left: 0;
+    }
+
+    #experiencia .card .contentBx{
+        width: 100%;
+        height: auto;
+        right: 0;
+        padding: 30px;
+        text-align: center;
+    }
+
+    #experiencia .card .contentBx::before{
+        top: 0;
+        bottom: 0;
+    }
+
+    #experiencia .card:nth-child(even) .imgBx{
+        left: 0;
+    }
+
+    #experiencia .card:nth-child(even) .contentBx{
+        right: 0;
+        padding: 30px;
+    }
+    
+}
+
+
+/*//////////////////////////////////////////////////////
+                    E S T U D I O S
+//////////////////////////////////////////////////////*/
+
+
+#estudios{
+    /* position: absolute; */
+    height: 500px;
+    width: 100%;
+    display: flex;
+    border: 2px solid #000;
+    box-sizing: border-box;    
+}
+
+#estudios .slide{
+    position: relative;
+    background: rgba(220, 220, 220, 0.8);
+    height: 100%;
+    flex: 1;
+    border-right: 2px solid #000;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+#estudios .slide:last-child{
+    border-right: none;
+}
+
+#estudios .slide:hover{
+    flex-grow: 5;
+}
+
+#estudios .slide:nth-child(1){
+    background-image: url(images/estudio1.jpg);
+    background-size: cover;
+    background-position: left top;
+}
+
+#estudios .slide:nth-child(2){
+    background-image: url(images/estudio2.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+#estudios .slide:nth-child(3){
+    background-image: url(images/estudio3.jpg);
+    background-size: cover;
+    background-position: left top;
+}
+
+#estudios .slide:nth-child(4){
+    background-image: url(images/estudio4.jpg);
+    background-size: cover;
+    background-position: left top;
+}
+
+#estudios .slide:nth-child(5){
+    background-image: url(images/estudio5.jpg);
+    background-size: cover;
+    background-position: left top;
+}
+
+
+#estudios .slide .estudio__content{
+    position: absolute;
+    bottom: 0;
+    margin: 40px;
+    padding: 30px;
+    background:rgba(0, 0, 0, 0.8);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
     transform: translateY(100px);
 }
 
-.section__open{
+
+#estudios .slide:hover .estudio__content{
     visibility: visible;
     opacity: 1;
-    transform: translateY(0px);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
 }
 
-.section--title{
-    font-size: 28px;
-    margin: 25px;
-    text-align: center;
-    text-transform: uppercase;
+
+
+/*//////////////////////////////////////////////////
+                H O B B Y
+//////////////////////////////////////////////////*/
+
+
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fada3e;
+} */
+
+.container{
+    /* position: relative; */
+    width: 100%;
+    margin:75px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px,1fr));    
 }
 
-.section--text{
-    min-width: 200px;
-    max-width: 800px;
+.container .card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.container .card:nth-child(even){
+    flex-direction: column-reverse;
+}
+
+.container .card .imgBx{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #000;
+}
+
+.container .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .content div{
     /* padding: 20px; */
-    font-size: 17px;
-    margin: auto;
     text-align: center;
-    line-height: 30px;
+}
+
+@media (max-width: 1000px){
+    .container{
+        grid-template-columns: repeat(auto-fit, minmax(100%,1fr));
+    }
+
+    .container .card{
+        flex-direction: row;
+        margin: 10px 30px;
+    }
+
+    .container .card:nth-child(even){
+        flex-direction: row-reverse;
+    }
+
+    .container .card .imgBx,
+    .container .card .content{
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px){
+    .container .card{
+        flex-direction: column;
+        /* margin: 10px 0; */
+    }
+
+    .container .card:nth-child(even){
+        flex-direction: column;
+    }
+
+    .container .card .imgBx,
+    .container .card .content{
+        width: 100%;
+    }
+
+    .container .card .content{
+        height: 200px;
+    }
 }
 
 
-/*/////////////////////////////////////////////////////////////////////
-                        about
-/////////////////////////////////////////////////////////////////////*/
 
-.img{
-    margin: auto;
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-    background-image: url(images/perfiltrabajo.jpg);
-    background-size: cover;
+/*//////////////////////////////////////////////////
+                C O N T A C T O
+//////////////////////////////////////////////////*/
+
+
+#contacto{
+    width: 100%;
+    background-color: #222222;
+    color: #fff;
+}
+
+.logo{
+    text-align: center;
+    font-size: 3em;
+}
+
+.logo span{
+    color: #b70e21;
+}
+
+/* .contact-wrapper{
+    margin: 1.5em;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+} */
+
+.contact-wrapper > * {
+    padding: 1em;
+}
+
+.contact-form{
+    background-color: #222222;
+}
+
+.contact-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form p{ 
+    padding: 1em;
+}
+
+.contact-form form .block{
+    grid-column: 1 / 3 ;
 }
 
 
-/*/////////////////////////////////////////////////////////////////////
-                        knowledge
-/////////////////////////////////////////////////////////////////////*/
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea{
+    width: 100%;
+    padding: 0.7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+}
+
+.contact-form form button{
+    background: #b70e21;
+    color: #000;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus{
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+.contact-info{
+    background-color: #000;
+}
+
+.contact-info h4,
+.contact-info ul,
+.contact-info p{
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.contact-info ul{
+    list-style: none;
+}
+
+.contact-info ul li{
+    padding: 0.3em;
+}
+
+/*LARGE SCREEN*/
+
+@media (min-width: 796px){
+
+    .contact-wrapper{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contact-wrapper > *{
+        padding: 2em;
+    }
+
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p{
+       /* padding: 1em;*/
+        text-align: left;
+    }
+}
+
+
 
