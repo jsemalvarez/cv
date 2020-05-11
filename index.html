@@ -18,7 +18,7 @@
                 <p>Me considero un apasionado de lo que hago. Capacitandome cosntantemente en nuevas tecnologías, con excelente predisposición. Teniendo como único deseo, el seguir aprendiendo con los mismos animos de un principiante</p>
            
             </article>
-            <h2> E X P E R I E N C I A </h2>
+            <h2 class="logo"> E X P E R I E N C I A </h2>
             <article id="experiencia">
                 
                 <div class="card">
@@ -88,7 +88,7 @@
             </article>
 
             <!-- ESTUDIOS -->
-            <h2>ESTUDIOS</h2>
+            <h2 class="logo">E S T U D I O S</h2>
             <article id="estudios">
 
                 <div class="slide">
@@ -128,7 +128,7 @@
                
             </article>
 
-
+            <h2 class="logo">H O B B Y S</h2>
             <article id="pasatiempos" class="container">
 
                 <div class="card">
@@ -242,7 +242,7 @@
     <script>
         var container = document.getElementById("inicio");
         container.onmousemove = function(e){
-            var x = - e.clientX/50, y = 120 - e.clientY/50;
+            var x = - e.clientX/50, y = -25 - e.clientY/50;
             container.style.backgroundPositionX = x + 'px';
             container.style.backgroundPositionY = y + 'px';
         }
