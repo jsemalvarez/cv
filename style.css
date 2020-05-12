@@ -39,6 +39,10 @@ section{
     overflow-y: scroll;
 }
 
+section::-webkit-scrollbar {
+    display: none;  /* Ocultar scroll */
+}
+
 #inicio{ 
     position: relative;
     height: 100%;
