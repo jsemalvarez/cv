@@ -233,86 +233,67 @@ section::-webkit-scrollbar {
                     E S T U D I O S
 //////////////////////////////////////////////////////*/
 
-
 #estudios{
-    /* position: absolute; */
-    height: 500px;
-    width: 100%;
-    display: flex;
-    border: 2px solid #000;
-    box-sizing: border-box;    
-}
-
-#estudios .slide{
     position: relative;
-    background: rgba(220, 220, 220, 0.8);
-    height: 100%;
-    flex: 1;
-    border-right: 2px solid #000;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
-}
-
-#estudios .slide:last-child{
-    border-right: none;
-}
-
-#estudios .slide:hover{
-    flex-grow: 5;
-}
-
-#estudios .slide:nth-child(1){
-    background-image: url(images/estudio1.jpg);
-    background-size: cover;
-    background-position: left top;
-}
-
-#estudios .slide:nth-child(2){
-    background-image: url(images/estudio2.jpg);
-    background-size: cover;
-    background-position: center center;
-}
-
-#estudios .slide:nth-child(3){
-    background-image: url(images/estudio3.jpg);
-    background-size: cover;
-    background-position: left top;
-}
-
-#estudios .slide:nth-child(4){
-    background-image: url(images/estudio4.jpg);
-    background-size: cover;
-    background-position: left top;
-}
-
-#estudios .slide:nth-child(5){
-    background-image: url(images/estudio5.jpg);
-    background-size: cover;
-    background-position: left top;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 1.3;
+    font-size: 14px;
 }
 
 
-#estudios .slide .estudio__content{
-    position: absolute;
-    bottom: 0;
-    margin: 40px;
-    padding: 30px;
-    background:rgba(0, 0, 0, 0.8);
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(100px);
+#estudios .card{
+    position: relative;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
 }
 
-
-#estudios .slide:hover .estudio__content{
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
-    transition-delay: 0.5s;
-    transform: translateY(0);
+#estudios .card .imgBx{
+    max-width: 150px;
+    flex: 0 0 150px;
 }
 
+#estudios .card .imgBx img{
+    width: 100%;
+}
+
+#estudios .card .content{
+    margin-left: 20px;
+}
+
+@media (max-width: 991px){
+    #estudios{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px){
+
+    #estudios{
+        width: 100%;
+    }
+
+    #estudios .card{
+        margin: 0;
+        margin-bottom: 5px;
+        padding: 2px;
+    }  
+
+    #estudios .card .imgBx{
+        display: none;
+       
+    }
+
+    #estudios .card .content{
+        margin-left: 5px;
+    }
+}
 
 
 /*//////////////////////////////////////////////////
