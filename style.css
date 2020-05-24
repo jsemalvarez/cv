@@ -281,8 +281,9 @@ section::-webkit-scrollbar {
 
     #estudios .card{
         margin: 0;
-        margin-bottom: 5px;
-        padding: 2px;
+        margin-bottom: 20px;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.8);
     }  
 
     #estudios .card .imgBx{
@@ -291,7 +292,9 @@ section::-webkit-scrollbar {
     }
 
     #estudios .card .content{
-        margin-left: 5px;
+        margin-left: 0;
+        padding: 30px 10px;
+        border-left: 20px solid #b70e21;
     }
 }
 
