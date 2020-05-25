@@ -244,6 +244,12 @@ section::-webkit-scrollbar {
     font-size: 14px;
 }
 
+#estudios a,
+#estudios h2,
+#estudios h3{
+    color: #2980b9;
+}
+
 
 #estudios .card{
     position: relative;
