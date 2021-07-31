@@ -230,26 +230,26 @@
                 <div class="contact-wrapper">
                     <div class="contact-form">
                         <!-- <h3>Contact us</h3> -->
-                        <form>
+                        <form action="https://formsubmit.co/jsemalvarez@gmail.com" method="POST">
                             <p>
-                                <lavel for="fullname">Nombre</lavel>
-                                <input type="text" name="fullname" id="fullname">
+                                <lavel for="name">Nombre</lavel>
+                                <input type="text" name="name" required>
                             </p>
                             <p>
                                 <lavel for="email">Email</lavel>
-                                <input type="email" name="email" id="email">
+                                <input type="email" name="email" required>
                             </p>
                             <p>
                                 <lavel for="phone">Teléfono</lavel>
-                                <input type="tel" name="phone" id="phone">
+                                <input type="tel" name="phone" >
                             </p>
                             <p>
-                                <lavel for="affair">Asunto</lavel>
-                                <input type="text" name="affair" id="affair">
+                                <lavel for="asunto">Asunto</lavel>
+                                <input type="text" name="affair" >
                             </p>
                             <p class="block">
                                 <lavel for="message">Mensaje</lavel>
-                                <textarea name="message" id="message" rows="3"></textarea>
+                                <textarea name="message" rows="3" required></textarea>
                             </p>
                             <p class="block">
                                 <button type="submit">
@@ -279,13 +279,10 @@
 
     </main>
 
+    <script src="main.js"></script>
+
     <script>
-        var container = document.getElementById("inicio");
-        container.onmousemove = function(e){
-            var x = - e.clientX/50, y = -25 - e.clientY/50;
-            container.style.backgroundPositionX = x + 'px';
-            container.style.backgroundPositionY = y + 'px';
-        }
+        
     </script>
 </body>
 </html>
