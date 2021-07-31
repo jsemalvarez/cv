@@ -521,11 +521,20 @@ section::-webkit-scrollbar {
 
 .contact-info ul{
     list-style: none;
+    margin: 0;
 }
 
 .contact-info ul li{
     padding: 0.3em;
 }
+
+
+.contact-info ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
 
 /*LARGE SCREEN*/
 
